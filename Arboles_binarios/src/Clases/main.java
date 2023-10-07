@@ -13,7 +13,9 @@ public class main {
         do {
             try {
                 opcion = Integer.parseInt(JOptionPane.showInputDialog("1 para nuevo nodo\n"
-                +"2 para salir"));
+                        +"2 para recorrer el arbol\n"
+                        +"3 para salir"));
+                
                 
                 switch(opcion){
                     case 1:
@@ -23,6 +25,14 @@ public class main {
                         break;
                     
                     case 2:
+                        if(!arbol.EstaVacio()){
+                          arbol.inorden(arbol.root);
+                        }else{
+                            System.out.println("esta vacio");
+                        }
+                        break;
+                        
+                    case 3:
                         JOptionPane.showMessageDialog(null, "saliste del programa");
                         break;
                         
@@ -34,6 +44,6 @@ public class main {
             } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, "error" + e.getMessage());
             }
-        } while (opcion !=2);
+        } while (opcion !=3);
     }
 }

@@ -33,4 +33,16 @@ public class Arbol_binario {
             }
         }
     }
+    
+    public boolean EstaVacio(){
+        return root == null;
+    }
+    
+    public void inorden(Nodo_Arbol raiz){
+        if(raiz != null){
+            inorden(raiz.izq);
+            System.out.println(raiz.dato);
+            inorden(raiz.der);
+        }
+    }
 }
